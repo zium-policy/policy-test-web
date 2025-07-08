@@ -1,3 +1,9 @@
+import Link from 'next/link';
 export default function Page() {
-  return <h1>/post</h1>;
+  return (
+    <div>
+      <h1>/post/:id</h1>
+      <Link href="/home">Back to Home</Link>
+    </div>
+  );
 }

@@ -1,3 +1,9 @@
+import Link from 'next/link';
 export default function Page() {
-  return <h1>/signup</h1>;
+  return (
+    <div>
+      <h1>/auth/signup</h1>
+      <Link href="/home">Cancel</Link>
+    </div>
+  );
 }
