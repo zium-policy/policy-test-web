@@ -1,17 +1,21 @@
-import type { Metadata } from "next";
-import './globals.css';
+'use client';
 
-export const metadata: Metadata = {
-  title: 'BizFit - 정책지원금',
-  description: '내게 딱 맞는 지원사업',
-};
+import './globals.css';
+import { useEffect } from 'react';
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
+  useEffect(() => {
+    if (!localStorage.getItem('deviceId')) {
+      localStorage.setItem('deviceId', crypto.randomUUID());
+    }
+  }, []);
+
   return (
     <html lang="ko">
-      <body className="min-h-screen bg-gray-50">
-        {children}
-      </body>
+      <body>{children}</body>
     </html>
   );
 }
+
+
+

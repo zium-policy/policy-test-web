@@ -1,3 +1,4 @@
+'use client';
 import Link from 'next/link';
 
 export default function LoginPage() {
@@ -22,7 +23,15 @@ export default function LoginPage() {
             <button className="w-full bg-black text-white py-4 rounded-lg font-medium hover:bg-gray-800 transition-colors">
               애플로 로그인
             </button>
-            <button className="w-full bg-yellow-400 text-black py-4 rounded-lg font-medium hover:bg-yellow-500 transition-colors">
+            <button
+              onClick={() => {
+                const clientId = '910a9c9f63c33d1cef9b63c77b6d1968';
+                const redirectUri = 'http://localhost:5173/oauth/kakao';
+                const kakaoUrl = `https://kauth.kakao.com/oauth/authorize?client_id=${clientId}&redirect_uri=${redirectUri}&response_type=code`
+                window.location.href = kakaoUrl;
+              }}
+              className="w-full bg-yellow-400 text-black py-4 rounded-lg font-medium hover:bg-yellow-500 transition-colors"
+            >
               카카오톡으로 로그인
             </button>
             <button className="w-full bg-green-500 text-white py-4 rounded-lg font-medium hover:bg-green-600 transition-colors">
@@ -44,3 +53,6 @@ export default function LoginPage() {
     </div>
   );
 }
+
+
+
