@@ -26,7 +26,7 @@ export default function LoginPage() {
             <button
               onClick={() => {
                 const clientId = '910a9c9f63c33d1cef9b63c77b6d1968';
-                const redirectUri = 'http://localhost:5173/oauth/kakao';
+                const redirectUri = 'http://localhost:5173/login/oauth/kakao';
                 const kakaoUrl = `https://kauth.kakao.com/oauth/authorize?client_id=${clientId}&redirect_uri=${redirectUri}&response_type=code`
                 window.location.href = kakaoUrl;
               }}
